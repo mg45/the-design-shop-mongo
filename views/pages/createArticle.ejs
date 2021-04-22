@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<%- include ('../partials/head.ejs') %>
+
+<%- include ('../partials/header.ejs') %>
+
+<body>
+    <div class="container space-top-4">
+        <!-- Form -->
+        <form action="/articles/new" method="post" class="js-validate">
+          <div class="row">
+            <div class="col-md-6 mb-3 mb-md-5">
+              <!-- Input -->
+              <div class="js-form-message">
+                <label class="input-label" for="productName">Product-name</label>
+                <div class="input-group">
+                  <input type="text" class="form-control" name="productName" id="productName" placeholder="Product-name" aria-label="First Name" required
+                         data-msg="Please enter Product-name.">
+                </div>
+              </div>
+              <!-- End Input -->
+            </div>
+      
+            <div class="col-md-6 mb-3 mb-md-5">
+              <!-- Input -->
+              <div class="js-form-message">
+                <label class="input-label" for="company">Company</label>
+                <div class="input-group">
+                  <input type="text" class="form-control" name="company" id="company" placeholder="Company" aria-label="Company" required
+                         data-msg="Please enter Company name.">
+                </div>
+              </div>
+              <!-- End Input -->
+            </div>
+      
+            <div class="col-md-6 mb-3 mb-md-5">
+              <!-- Input -->
+              <div class="js-form-message">
+                <label class="input-label" for="emailAddressLabel">Price</label>
+                <div class="input-group">
+                  <input type="number" class="form-control" name="price" id="emailAddressLabel" placeholder="Price" aria-label="Price" required
+                         data-msg="Please enter a Price.">
+                </div>
+              </div>
+              <!-- End Input -->
+            </div>
+      
+            <div class="col-md-6 mb-3 mb-md-5">
+              <!-- Input -->
+              <div class="js-form-message">
+                <label class="input-label" for="Product Url">Product Url <span class="text-muted font-weight-normal ml-1">(optional)</span></label>
+                <div class="input-group">
+                  <input type="text" class="form-control" name="productPictureLink" id="productPictureLink" placeholder="Product Url" aria-label="Product Url">
+                </div>
+              </div>
+              <!-- End Input -->
+            </div>
+
+            <div class="col-md-12 mb-3 mb-md-5">
+                <!-- Input -->
+                <div class="js-form-message">
+                  <label class="input-label" for="urlLabel">linkShop <span class="text-muted font-weight-normal ml-1">(optional)</span></label>
+                  <div class="input-group">
+                    <input type="text" class="form-control" name="linkShop" id="linkShop" placeholder="linkShop" aria-label="linkShop">
+                  </div>
+                </div>
+                <!-- End Input -->
+              </div>
+
+          </div>
+            
+          <div class="text-center">
+            <button type="submit" class="btn btn-primary transition-3d-hover">Add product</button>
+          </div>
+        </form>
+        <!-- End Form -->
+      </div>
+      <%- include ('../partials/compulsoryJs.ejs') %>
+</body>
+
+</html>

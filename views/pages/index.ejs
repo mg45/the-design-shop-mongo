@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<%- include ('../partials/head.ejs') %>
+
+    <%- include ('../partials/header.ejs') %>
+
+        <body>
+
+            <!-- ========== MAIN ========== -->
+
+            <!-- Products Section -->
+            <div class="container space-2">
+
+                <!-- Products -->
+                <div class="row mx-n2 mx-sm-n3 mb-3 space-top-2">
+
+                    <% articles.forEach(article=> { %>
+                        <div class="col-sm-6 col-lg-3 px-2 px-sm-3 mb-3 mb-sm-5">
+                            <!-- Product -->
+                            <div class="card card-bordered shadow-none text-center h-100">
+                                <div class="position-relative">
+                                    <img class="card-img-top" src="<%= article.productPictureLink %> "
+                                        alt="Image Description">
+
+                                </div>
+
+                                <div class="card-body pt-4 px-4 pb-0">
+                                    <div class="mb-2">
+                                        <a class="d-inline-block text-body small font-weight-bold mb-1"
+                                            href="/articles/<%= article._id %>">
+                                            <%= article.company %>
+                                        </a>
+                                        <span class="d-block font-size-1">
+                                            <a class="text-inherit" href="/articles/<%= article._id %>">
+                                                <%= article.productName %>
+                                            </a>
+                                        </span>
+                                        <div class="d-block">
+                                            <span class="text-dark font-weight-bold">€ <%= article.price %> </span>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="card-footer border-0 pt-0 pb-4 px-4">
+
+                                    <a class="btn btn-sm btn-outline-primary btn-pill transition-3d-hover"
+                                        href="/articles/<%= article._id %>" role="button">View more</a>
+
+                                </div>
+                            </div>
+                            <!-- End Product -->
+                        </div>
+                        <% }) %>
+
+                </div>
+                <!-- End Products -->
+
+            </div>
+            <!-- End Products Section -->
+
+            <!-- ========== END MAIN ========== -->
+
+            <%- include ('../partials/compulsoryJs.ejs') %>
+
+        </body>
+
+</html>

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<%- include ('../partials/head.ejs') %>
+
+<%- include ('../partials/header.ejs') %>
+
+    <body>
+
+        <!-- Hero Section -->
+        <div class="container space-3">
+            <div class="row">
+                <div class="col-lg-7 mb-7 mb-lg-0">
+                    <div class="pr-lg-4">
+                        <div class="position-relative">
+                       
+                            <div id="heroSlider" class="js-slick-carousel slick border rounded-lg">
+                                <div>
+                                    <img class="img-fluid w-100 rounded-lg" src="<%= article.productPictureLink %> "
+                                        alt="Image Description">
+                                </div>
+                            </div>
+            
+                            <div class="position-absolute bottom-0 right-0 left-0 px-4 py-3">
+                                <div id="heroSliderNav"
+                                    class="js-slick-carousel slick slick-gutters-1 slick-transform-off max-w-27rem mx-auto">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product Description -->
+                <div class="col-lg-5">
+
+                    <!-- Title -->
+                    <div class="mb-5">
+                        <h1 class="h2"><%= article.productName %> </h1>
+                        <p><%= article.company %> </p>
+                    </div>
+                    <!-- End Title -->
+
+                    <!-- Price -->
+                    <div class="mb-5">
+                        <h2 class="font-size-1 text-body mb-0">Total price:</h2>
+                        <span class="text-dark font-size-2 font-weight-bold">€ <%= article.price %></span>
+                        <span class="text-body ml-2"></span>
+                    </div>
+                    <!-- End Price -->
+
+                    <div id="shopCartAccordionExample2" class="accordion mb-5">
+                        
+                        <a class="btn btn-sm btn-outline-primary btn-pill transition-3d-hover" href="/articles/form/update/<%= article._id %>" role="button">Edit</a>
+
+                        <a class="btn btn-sm btn-outline-primary btn-pill transition-3d-hover" href="/articles/delete/<%= article._id %>" data-method="DELETE" role="button">Delete</a>
+
+                    </div>
+
+                    <div class="mb-4">
+                        <a class="btn btn-block btn-primary btn-pill transition-3d-hover" href="<%= article.linkShop %> "target="_blank" role="button">Buy product</a>
+                    </div>
+
+                </div>
+                <!-- End Product Description -->
+            </div>
+        </div>
+        <!-- End Hero Section -->
+
+        <%- include ('../partials/compulsoryJs.ejs') %>
+    </body>
+
+</html>
